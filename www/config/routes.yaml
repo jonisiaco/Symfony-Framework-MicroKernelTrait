@@ -1,0 +1,9 @@
+random_number:
+    path:       /random/{limit}
+    defaults: { _controller: controller.micro_controller:randomNumber }
+    requirements:
+        limit: '\d+'
+
+index:
+    path:       /
+    defaults: { _controller: controller.micro_controller:index }

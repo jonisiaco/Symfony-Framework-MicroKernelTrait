@@ -1,0 +1,13 @@
+framework:
+    secret: S0ME_SECRET
+    profiler: { only_exceptions: false }
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+    controller.micro_controller:
+        class: Controller\MicroController
+        tags: ['controller.service_arguments', 'controller.service_subscriber']
+        calls:
+            - [setContainer, ['@Psr\Container\ContainerInterface']]
